@@ -1,9 +1,12 @@
+<?php
+	include("class/funciones.php");
+?>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Premier Travel | Inicio</title>
+	<title>Premier Travel | Pago</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="tripspremier" />
 	<meta name="keywords" content="Hoteles, resevaciones, viajes, turismo, cancun, riviera maya, yucatan, viajes, booking" />
@@ -284,63 +287,30 @@
 						<div class="row">
 							<div class="row mb-3">
 								<div class="col-sm-12">
-									<label class="text-right">NOMBRE DEL TITULAR</label>
-									<input type="text" name="nombre_titular" id="nombre_titular" class="form-control" value="" placeholder="Escriba el nombre como esta en su tarjeta">
+									<label class="text-right">Cantidad a cobrar</label>
+									<input type="text" name="cantidad_cobrar" id="cantidad_cobrar" class="form-control" value="" placeholder="Escribe la cantidad a cobrar">
 								</div>
 								<div class="col-sm-12">
-									<label>NUMERO DE TARJETA</label>
-									<input type="text" name="numero_tarjeta" id="numero_tarjeta" class="form-control" value="" placeholder="Escriba los 16 digitos de su tarjeta">
+									<label>Descripción del cobro</label>
+									<input type="text" name="descripcion" id="descripcion" class="form-control" value="" placeholder="Escribe la descripcion del cobro">
+								</div>
+								<div class="col-sm-12">
+									<label>Fecha de expiración</label>
+									<input type="date" name="fch_expiracion" id="fch_expiracion" class="form-control" value="" >
 								</div>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-8">
-									<label>FECHA DE VENCIMIENTO</label>
-									<div class="row">
-										<div class="col-lg-6">
-											<input type="text" class="form-control" name="mes_vencimiento" id="mes_vencimiento" placeholder="MM" maxlength="2" minlength="2">
-										</div>
-										<div class="col-lg-6">
-											<input type="text" class="form-control" name="anio_vencimiento" id="anio_vencimiento" placeholder="YY" maxlength="2" minlength="2">
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<label>CVV</label>
-									<input type="text" name="cvv" id="cvv" class="form-control" value="" placeholder="CVV" maxlength="4" minlength="3">
-								</div>
-							</div>
-							
 						</div>
-						<div class="row botones-pago">
+						<div class="row" style="margin-top:10px;">
 							<div class="row mb-3">
 								<div class="col-lg-2">
-									<button type="button" class="btn btn-danger">Pagar</button>
-								</div>
-								<div class="col-lg-2">
-									<button type="button" class="btn btn-info">Generar link de pago</button>
+									<button type="button" class="btn btn-danger link-cobro">Generar link de cobro</button>
 								</div>
 							</div>
 						</div>
 					</form>
 				</div>
-				<div class="col-lg-6 resumen-pago">
-					<div class="card-columns wrap resumen">
-						<h1 class="text-center">Resumen de compra</h1>
-						<div class="row">
-							<div class="col-lg-12">
-								<label class="resumen">DESCRIPCION DE PAGO</label>
-								<p class="">VIAJE A PUERTO VALLARTA TODO INCLUIDO</p>
-							</div>
-							<div class="col-lg-12">
-								<label class="resumen">FECHA DE VIAJE</label>
-								<p class="">15-04-2023</p>
-							</div>
-							<div class="col-lg-12">
-								<label class="resumen">MONTO A PAGAR</label>
-								<h1 class="">$5600.00 MXN</h1>
-							</div>
-						</div>
-					</div>
+				<div class="col-lg-12">
+					<h4 id="link-pago"></h4>
 				</div>
 			</div>
 		</div>
@@ -479,6 +449,22 @@
 	<script src="js/jquery.flexslider-min.js"></script>
 
 	<script src="js/custom.js"></script>
+	<script>
+		$(".link-cobro").on("click",function(){
+			var cantidad_cobrar = document.getElementById("cantidad_cobrar").value;
+			var descripcion = document.getElementById("descripcion").value;
+			var fch_expiracion = document.getElementById("fch_expiracion").value;
+
+			$.ajax({
+				type: "POST",
+				url: "ajax/generar-link-cobro.php",
+				data: {total_cobrar : cantidad_cobrar, descripcion : descripcion, fch_expiracion : fch_expiracion},
+				success: function(response){
+					$("#link-pago").text(response);
+				}
+			})
+		})
+	</script>
 
 </body>
 </html>
