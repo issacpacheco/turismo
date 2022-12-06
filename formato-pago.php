@@ -337,7 +337,7 @@
 									<button type="button" class="btn btn-danger pagar" id="boton-pago">Pagar</button>
 								</div>
 								<div class="col-lg-2">
-									<button type="button" class="btn btn-info">Generar link de pago</button>
+									<button type="button" class="btn btn-info boton-link" id="boton-link">Generar link de pago</button>
 								</div>
 							</div>
 						</div>
@@ -543,7 +543,53 @@
 				}
 			})
 		});
-		
+		$(".boton-link").on("click",function(){
+			$('#boton-link').empty();
+			$('#boton-link').prop('disabled',true);
+			$('#boton-link').append('<i class="fas fa-spinner fa-spin"></i> Generando link...');
+			$.ajax({
+				type: "POST",
+				url: "ajax/generar-link-pago.php",
+				data: $('#metodo-pago').serialize(),
+				cache: false,
+				dataType: "JSON",
+				success: function (response) {
+					switch(response.respuesta){
+						case "1":{
+							Swal.fire({
+								icon: 'success',
+								title: 'Link generado',
+								text: 'Gracias!'
+							});
+							var url = response.url;
+							window.open(url, '_blank');
+							break;
+						}
+						case "2":{
+							Swal.fire({
+								icon: 'error',
+								title: 'Algo sucedio',
+								text: response.mensaje
+							});
+							break;
+						}
+						default:
+						{
+							//Error
+							Swal.fire({
+								icon: 'error',
+								title: 'Oops...',
+								text: 'Ocurrío un error, por favor intente de nuevo.',
+							});
+							break;
+						}
+					}
+					$('#boton-link').empty();
+					$('#boton-link').append('Abrir link');
+					$('#boton-link').prop('disabled',false);
+				}
+			})
+		})
 	</script>
 
 </body>
