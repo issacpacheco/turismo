@@ -333,12 +333,12 @@
 						</div>
 						<div class="row">
 							<div class="row mb-3">
-								<div class="col-lg-2">
+								<div class="col-sm-8">
 									<button type="button" class="btn btn-danger pagar" id="boton-pago">Pagar</button>
 								</div>
-								<div class="col-lg-2">
+								<!-- <div class="col-lg-2">
 									<button type="button" class="btn btn-info boton-link" id="boton-link">Generar link de pago</button>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</form>

@@ -27,9 +27,9 @@
                   );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://sandbox.api.holacash.mx/v2/payment_link");
+    curl_setopt($ch, CURLOPT_URL,"https://live.api.holacash.mx/v2/payment_link");
     curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Api-Client-Key: pub_sandbox_FIFCTLCq.CDs9U2xOnySk3Kx7REXyF3KcOK1B1mM9',
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Api-Client-Key: pub_live_2wT5g54n.EWdUiXZq86EYYdMs1XgzJZUG1vxp1X8W',
                                                 'Content-Type: application/json')); 
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($datos));
     
