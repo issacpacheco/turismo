@@ -5,7 +5,7 @@
 	$fchexp 		= filter_input(INPUT_GET,'fchexp',FILTER_SANITIZE_SPECIAL_CHARS);
 ?>
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,24 +35,24 @@
 
 	<!-- Stylesheets -->
 	<!-- Dropdown Menu -->
-	<link rel="stylesheet" href="css/superfish.css">
+	<!-- <link rel="stylesheet" href="css/superfish.css"> -->
 	<!-- Owl Slider -->
 	<!-- <link rel="stylesheet" href="css/owl.carousel.css"> -->
 	<!-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
 	<!-- Date Picker -->
 	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 	<!-- CS Select -->
-	<link rel="stylesheet" href="css/cs-select.css">
-	<link rel="stylesheet" href="css/cs-skin-border.css">
+	<!-- <link rel="stylesheet" href="css/cs-select.css"> -->
+	<!-- <link rel="stylesheet" href="css/cs-skin-border.css"> -->
 
 	<!-- Themify Icons -->
-	<link rel="stylesheet" href="css/themify-icons.css">
+	<!-- <link rel="stylesheet" href="css/themify-icons.css"> -->
 	<!-- Flat Icon -->
-	<link rel="stylesheet" href="css/flaticon.css">
+	<!-- <link rel="stylesheet" href="css/flaticon.css"> -->
 	<!-- Icomoon -->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- <link rel="stylesheet" href="css/icomoon.css"> -->
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- <link rel="stylesheet" href="css/flexslider.css"> -->
 	
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
@@ -63,439 +63,179 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.0/dist/sweetalert2.min.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	
-	<!---
-	<script src="js/respond.min.js"></script>
-	--->
+	<!-- <script src="js/modernizr-2.6.2.min.js"></script> -->
 
 	<style>
-		#fh5co-blog-section .blog-grid {
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center center;
-			width: 100%;
-			height: 485px;
+		/* If you like this, please check my blog at codedgar.com.ve */
+		@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+		body{
+			font-family: 'Work Sans', sans-serif;
+			background: #00d2ff; 
+			background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff); 
+			background: linear-gradient(to right, #3a7bd5, #00d2ff); 
+		}
+
+		.card{
+			background: #16181a;
+			border-radius: 14px;
+			max-width: 550px;
+			display: block;
+			margin: auto;
+			padding: 60px;
+			padding-left: 50px;
+			padding-right: 20px;
+			box-shadow: 2px 10px 40px black;
+			z-index: 99;
+		}
+
+		.logo-card{max-width:50px; margin-bottom:15px; margin-top: -19px;}
+
+		label{display:flex; font-size:10px; color:white; opacity:.4;}
+
+		input{font-family: 'Work Sans', sans-serif;background:transparent; border:none; border-bottom:1px solid transparent; color:#dbdce0; transition: border-bottom .4s;}
+		input:focus{border-bottom:1px solid #1abc9c; outline:none;}
+
+		.cardnumber{display:block; font-size:20px; margin-bottom:8px; }
+
+		.name{display:block; font-size:15px; max-width: 200px; float:left; margin-bottom:15px;}
+
+		.toleft{float:left;}
+		.ccv{width:50px; margin-top:-5px; font-size:15px;}
+
+		.receipt{
+			background: #dbdce0;
+			border-radius: 4px;
+			padding: 5%;
+			padding-top: 300px;
+			max-width: 695px;
+			display: block;
+			margin: auto;
+			margin-top: -180px;
+			z-index: -999;
 			position: relative;
 		}
-		#fh5co-logo {
-			font-size: 0px;
-			text-transform: uppercase;
-			font-weight: 300;
-			float: left;
-			margin-bottom: 0;
-			margin-top: 1.4em;
+
+		.col{width:50%; float:left;}
+		.bought-item{background:#f5f5f5; padding:2px;}
+		.bought-items{margin-top:-3px;}
+
+		.cost{color:#3a7bd5;}
+		.seller{color: #3a7bd5;}
+		.description{font-size: 13px;}
+		.price{font-size:12px;}
+		.comprobe{text-align:center;}
+		.proceed{
+			position:absolute; 
+			transform:translate(300px, 10px); 
+			width:90px; 
+			height:90px; 
+			border-radius:50%; 
+			background:#1abc9c; 
+			border:none;color:white; 
+			transition: box-shadow .2s, transform .4s; 
+			cursor:pointer;
+			margin-left: 150px;
+			margin-top: 60px;
 		}
-		#fh5co-header-section {
-			background: transparent;
-			padding: 0;
-			width: 100%;
-			background-color: rgba(0,0,0,0.3);
-		}
-		.margin-div {
-			margin-top: 30px;
-			margin-left: 120px;
-			margin-bottom: 10px;
+		.proceed:active{outline:none; }
+		.proceed:focus{outline:none;box-shadow: inset 0px 0px 5px white;}
+		.sendicon{filter:invert(100%); padding-top:2px;}
+
+		.container {
+			margin-right: auto;
+			margin-left: auto;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-top: 115px;
 		}
 
-		.resumen{
-			color: #fff;
+		@media (max-width: 600px){
+			.proceed{transform:translate(250px, 10px);}
+			.col{display:block; margin:auto; width:100%; text-align:center;}
 		}
 
-		.resumen p,h1{
-			color: #fff;
-		}
-		.resumen-pago{
-			background-color: tomato;
-			margin: 0px 0px 0px 10px;
-			width: 49%;
-		}
-		.botones-pago{
-			margin-left: 30rem;
-			margin-right: -20rem;
-			margin-top: 2rem;
-		}
-		@media only screen and (max-width: 375px)  {
-			#fh5co-blog-section .blog-grid {
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center center;
-				width: 100%;
-				height: 175px;
-				position: relative;
-			}
-			.margin-div {
-				margin: 10px;
-				margin-top: 20px;
-				margin-left: 10px;
-				margin-bottom: 0px;
-			}
-			.resumen-pago{
-				background-color: tomato;
-				margin: auto;
-    			width: 100%;
-			}
-			.botones-pago{
-				margin-left: 0;
-				margin-right: 0;
-				margin-top: 0;
-			}
-		}
-		@media only screen and (min-width: 376px) and (max-width: 425px){
-			#fh5co-blog-section .blog-grid {
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center center;
-				width: 100%;
-				height: 200px;
-				position: relative;
-			}
-			.margin-div {
-				margin: 10px;
-				margin-top: 20px;
-				margin-left: 10px;
-				margin-bottom: 0px;
-			}
-			.resumen-pago{
-				background-color: tomato;
-				margin: auto;
-    			width: 100%;
-			}
-			.botones-pago{
-				margin-left: 0;
-				margin-right: 0;
-				margin-top: 0;
-				width: 100%;
-			}
-		}
-		@media only screen and (min-width: 426px) and (max-width: 768px){
-			#fh5co-blog-section .blog-grid {
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center center;
-				width: 100%;
-				height: 380px;
-				position: relative;
-			}
-			.margin-div {
-				margin: 10px;
-				margin-top: 20px;
-				margin-left: 10px;
-				margin-bottom: 0px;
-			}
-		}
-		@media only screen and (min-width: 769px) and (max-width: 1024px){
-			#fh5co-blog-section .blog-grid {
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center center;
-				width: 100%;
-				height: 247px;
-				position: relative;
-			}
-			.margin-div {
-				margin: 10px;
-				margin-top: 20px;
-				margin-left: 10px;
-				margin-bottom: 0px;
-			}
-		}
-		@media only screen and (min-width: 1025px) and (max-width: 1440px){
-			#fh5co-blog-section .blog-grid {
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center center;
-				width: 100%;
-				height: 355px;
-				position: relative;
-			}
-			.margin-div {
-				margin: 10px;
-				margin-top: 20px;
-				margin-left: 10px;
-				margin-bottom: 0px;
-			}
-		}
-		/* @media only screen and (min-width: 1441px) and (max-width: 2560px){
-			#fh5co-blog-section .blog-grid {
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center center;
-				width: 100%;
-				height: 480px;
-				position: relative;
-			}
-		} */
 	</style>
 	
 </head>
 <body>
-	<div id="fh5co-wrapper">
-	<div id="fh5co-page">
-	<div id="fh5co-header">
-		<header id="fh5co-header-section">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-					<h6 id="fh5co-logo"><img src="images/logo.png" alt="" style="width: 25%;"></h6>
-					<!-- <h1 id="fh5co-logo"><a href="index.html">Trips Premier</a></h1> -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="index.html">Inicio</a></li>
-							<li><a href="paquetes.html">Paquetes</a></li>
-							<li><a href="services.html">Nosotros</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-		
-	</div>
-	<!-- end:fh5co-header -->
-	<div class="fh5co-parallax" style="background-image: url(images/metodo-pago.jpg);" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
-					<div class="fh5co-intro fh5co-table-cell">
-						<h1 class="text-center">GRACIAS POR CONFIAR EN NOSOTROS</h1>
-						<div id="fh5co-counter-section" class="fh5co-counters">
-							<div class="container">
-								<div class="row">
-									<div class="col-md-3 text-center">
-										<p class="fh5co-counter js-counter" data-from="0" data-to="989" data-speed="5000" data-refresh-interval="50"></p>
-										<p class="fh5co-counter-label">Clientes satisfechos</p>
-									</div>
-									<div class="col-md-3 text-center">
-										<p class="fh5co-counter js-counter" data-from="0" data-to="5487" data-speed="5000" data-refresh-interval="50"></p>
-										<p class="fh5co-counter-label">Hoteles disponibles</p>
-									</div>
-									<div class="col-md-3 text-center">
-										<p class="fh5co-counter js-counter" data-from="0" data-to="378" data-speed="5000" data-refresh-interval="50"></p>
-										<p class="fh5co-counter-label">Transacciones satisfactorias</p>
-									</div>
-									<div class="col-md-3 text-center">
-										<p class="fh5co-counter js-counter" data-from="0" data-to="200" data-speed="5000" data-refresh-interval="50"></p>
-										<p class="fh5co-counter-label">Reseñas y Opiniones</p>
-									</div>
-								</div>
+	<div class="container">
+		<div class="card">
+			<form id="metodo-pago">
+				<input type="hidden" name="total_pago" id="total_pago" value="<?php echo $total ?>">
+				<input type="hidden" name="descripcion" id="descripcion" value="<?php echo $description ?>">
+				<input type="hidden" name="fch_exp" id="fch_exp" value="<?php echo $fchexp; ?>">
+				<input type="hidden" name="correo" id="correo" value="isaacpacheco.go@gmail.com" class="form-control" placeholder="Correo electronico">
+				<button class="proceed pagar" id="boton-pago">
+					<svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
+						<path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+					</svg>
+				</button>
+				<img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
+				<label>Numero de tarjeta:</label>
+				<input type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121" name="numero_tarjeta" id="numero_tarjeta">
+				<div class="row">
+					<div class="col-lg-12">
+						<label>Nombre Titular:</label>
+						<input class="input name"  placeholder="Edgar Pérez" name="nombre_titular" id="nombre_titular">
+					</div>
+					<div class="col-lg-3">
+						<label class="">CCV:</label>
+						<input class="input  ccv" placeholder="321" name="cvv" id="cvv" value="" placeholder="CVV" maxlength="4" minlength="3">
+					</div>
+					<div class="col-lg-6">
+						<label class="">Fecha vencimiento:</label>
+						<div class="row">
+							<div class="col-lg-3">
+								<input type="text" name="mes_vencimiento" id="mes_vencimiento" value="" class="input ccv" placeholder="MES">
+							</div>
+							<div class="col-lg-3">
+								<input type="text" name="anio_vencimiento" id="anio_vencimiento" value="" class="input ccv" placeholder="AÑO">
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
-	</div>
-	<div class="" id="fh5co-blog-section">
-		<div class="container">
-			<div class="row">				
+		<div class="receipt">
+			<div class="row">
+				<div class="col-lg-6"><p>Costo:</p>
+					<h2 class="cost">$<?php echo $desencriptar($total); ?> MXN</h2><br>
+				</div>
 				<div class="col-lg-6">
-					<form id="metodo-pago">
-						<input type="hidden" name="total_pago" id="total_pago" value="<?php echo $total ?>">
-						<input type="hidden" name="descripcion" id="descripcion" value="<?php echo $description ?>">
-						<input type="hidden" name="fch_exp" id="fch_exp" value="<?php echo $fchexp; ?>">
-						<div class="row">
-							<div class="row mb-3">
-								<div class="col-sm-12">
-									<label class="text-right">NOMBRE DEL TITULAR</label>
-									<input type="text" name="nombre_titular" id="nombre_titular" class="form-control" value="" placeholder="Escriba el nombre como esta en su tarjeta">
-								</div>
-								<div class="col-sm-12">
-									<label>NUMERO DE TARJETA</label>
-									<input type="text" name="numero_tarjeta" id="numero_tarjeta" class="form-control" value="" placeholder="Escriba los 16 digitos de su tarjeta" maxlength="16" minlength="16">
-								</div>
-							</div>
-							<div class="row mb-3">
-								<div class="col-sm-8">
-									<label>FECHA DE VENCIMIENTO</label>
-									<div class="row">
-										<div class="col-lg-6">
-											<input type="text" class="form-control" name="mes_vencimiento" id="mes_vencimiento" placeholder="MM" maxlength="2" minlength="2">
-										</div>
-										<div class="col-lg-6">
-											<input type="text" class="form-control" name="anio_vencimiento" id="anio_vencimiento" placeholder="YY" maxlength="2" minlength="2">
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<label>CVV</label>
-									<input type="text" name="cvv" id="cvv" class="form-control" value="" placeholder="CVV" maxlength="4" minlength="3">
-								</div>
-							</div>
-
-							<div class="row mb-3">
-								<div class="col-lg-12">
-									<label>Correo (donde te enviaremos tu voucher de pago)</label>
-									<input type="email" name="correo" id="correo" value="" class="form-control" placeholder="Correo electronico">
-								</div>
-							</div>
-							
-						</div>
-						<div class="row">
-							<div class="row mb-3">
-								<div class="col-sm-8">
-									<button type="button" class="btn btn-danger pagar" id="boton-pago">Pagar</button>
-								</div>
-								<!-- <div class="col-lg-2">
-									<button type="button" class="btn btn-info boton-link" id="boton-link">Generar link de pago</button>
-								</div> -->
-							</div>
-						</div>
-					</form>
+					<p>Descripcion :</p>
+					<h3 class="bought-items"><?php echo $desencriptar($description); ?></h3>
 				</div>
-				<div class="col-lg-6 resumen-pago">
-					<div class="card-columns wrap resumen">
-						<h1 class="text-center">Resumen de compra</h1>
-						<div class="row">
-							<div class="col-lg-12">
-								<label class="resumen">DESCRIPCION DE PAGO</label>
-								<p class=""><?php echo $desencriptar($description); ?></p>
-							</div>
-							<div class="col-lg-12">
-								<label class="resumen">MONTO A PAGAR</label>
-								<h1 class="">$<?php echo $desencriptar($total); ?> MXN</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="wrap">
-		<div class="container">
-			<div class="row">
-				
 			</div>
 		</div>
 	</div>
 	
-
-	<div id="fh5co-blog-section">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="section-title text-center">
-					<h2>Nuestras promociones</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 margin-div">
-				<img src="images/image-1.jpg" class="img-fluid rounded-top" alt="" style="    max-width: 100%;">
-			</div>
-			<div class="col-md-3 margin-div">
-				<img src="images/image-2.jpg" class="img-fluid rounded-top" alt="" style="    max-width: 100%;">
-			</div>
-			<div class="col-md-3 margin-div">
-				<img src="images/image-3.jpg" class="img-fluid rounded-top" alt="" style="    max-width: 100%;">
-			</div>
-			<div class="col-md-3 margin-div">
-				<img src="images/image-4.jpg" class="img-fluid rounded-top" alt="" style="    max-width: 100%;">
-			</div>
-			<div class="col-md-3 margin-div">
-				<img src="images/image-5.jpg" class="img-fluid rounded-top" alt="" style="    max-width: 100%;">
-			</div>
-			<div class="col-md-3 margin-div">
-				<img src="images/image-6.jpg" class="img-fluid rounded-top" alt="" style="    max-width: 100%;">
-			</div>
-		</div>
-	</div>
-
-	<footer id="footer" class="fh5co-bg-color">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="copyright">
-						<p><small>&copy; 2019 Trips Premier <br>
-						Desarrollado por MKT Solutions <a href="" target="_blank">MKT Solution</a></small></p>
-						<br>
-						<p>
-							<small>Contactanos <br>
-								Correo: <i class="fal fa-envelope"></i><a href="" target="_blank"> ventas@tripspremier.com</a>
-								<br>
-								Telefono: <i class="fal fa-phone-alt"></i> <a href="" target="_blank">999 513 5811</a>
-								<br>
-								Direccion: <i class="fal fa-map-marked-alt"></i> <a href="" target="_blank">MKT Solution</a>
-							</small>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-md-3">
-							<h3>Compañia</h3>
-							<ul class="link">
-								<li><a href="#">Nosotros</a></li>
-								<li><a href="#">Paquetes</a></li>
-							</ul>
-						</div>
-						<div class="col-md-3">
-							<h3>Hoteles en convenio</h3>
-							<ul class="link">
-								<li><a href="#">Hotel Francés</a></li>
-								<li><a href="#">Marriot</a></li>
-								<li><a href="#">Park Royal Beach</a></li>
-								<li><a href="#">Dreams Tulum Resort and Spa</a></li>
-								<li><a href="#">Iberostar Grand Paraiso</a></li>
-								<li><a href="#">Courtyard</a></li>
-							</ul>
-						</div>
-						<div class="col-md-6">
-							<h3>Suscribete</h3>
-							<p>Recibe en tu correo nuestras promociones del mes, suscribete con nosotros</p>
-							<form action="#" id="form-subscribe">
-								<div class="form-field">
-									<input type="email" placeholder="Correo electronico" id="email">
-									<input type="submit" id="submit" value="Enviar">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<ul class="social-icons">
-						<li>
-							<a href="#"><i class="icon-twitter-with-circle"></i></a>
-							<a href="#"><i class="icon-facebook-with-circle"></i></a>
-							<a href="#"><i class="icon-instagram-with-circle"></i></a>
-							<a href="#"><i class="icon-linkedin-with-circle"></i></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	</div>
-	<!-- END fh5co-page -->
-
-	</div>
 	<!-- END fh5co-wrapper -->
 	<!--Sweet Alert-->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!-- Javascripts -->
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- Dropdown Menu -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
+	<!-- <script src="js/hoverIntent.js"></script> -->
+	<!-- <script src="js/superfish.js"></script> -->
 	<!-- Bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- <script src="js/jquery.waypoints.min.js"></script> -->
 	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+	<!-- <script src="js/jquery.countTo.js"></script> -->
 	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<!-- <script src="js/jquery.stellar.min.js"></script> -->
 	<!-- Owl Slider -->
 	<!-- // <script src="js/owl.carousel.min.js"></script> -->
 	<!-- Date Picker -->
 	<script src="js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
-	<script src="js/classie.js"></script>
-	<script src="js/selectFx.js"></script>
+	<!-- <script src="js/classie.js"></script>
+	<script src="js/selectFx.js"></script> -->
 	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- <script src="js/jquery.flexslider-min.js"></script> -->
 
-	<script src="js/custom.js"></script>}
+	<!-- <script src="js/custom.js"></script> -->
 	
 	<script>
 		$(".pagar").on("click",function(){
