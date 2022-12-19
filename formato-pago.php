@@ -76,7 +76,7 @@
 		}
 
 		.card{
-			background: #16181a;
+			background: #fff;
 			border-radius: 14px;
 			max-width: 550px;
 			display: block;
@@ -90,7 +90,7 @@
 
 		.logo-card{max-width:50px; margin-bottom:15px; margin-top: -19px;}
 
-		label{display:flex; font-size:10px; color:white; opacity:.4;}
+		label{display:flex; font-size:10px; color:#000; opacity:.4;}
 
 		input{font-family: 'Work Sans', sans-serif;background:transparent; border:none; border-bottom:1px solid transparent; color:#dbdce0; transition: border-bottom .4s;}
 		input:focus{border-bottom:1px solid #1abc9c; outline:none;}
@@ -150,7 +150,24 @@
 		}
 
 		@media (max-width: 600px){
-			.proceed{transform:translate(250px, 10px);}
+			.proceed{
+				transform:translate(250px, 10px);
+				position: relative;
+				right: 245px;
+				top: 300px;
+			}
+			.card {
+				background: #fff;
+				border-radius: 14px;
+				max-width: 550px;
+				display: block;
+				margin: auto;
+				/* padding: 0px; */
+				padding-left: 50px;
+				padding-right: 20px;
+				box-shadow: 2px 10px 40px black;
+				z-index: 99;
+			}
 			.col{display:block; margin:auto; width:100%; text-align:center;}
 		}
 
@@ -172,7 +189,7 @@
 				</button>
 				<img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
 				<label>Numero de tarjeta:</label>
-				<input type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121" name="numero_tarjeta" id="numero_tarjeta">
+				<input type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121" name="numero_tarjeta" id="numero_tarjeta" maxlength="16">
 				<div class="row">
 					<div class="col-lg-12">
 						<label>Nombre Titular:</label>
@@ -186,10 +203,10 @@
 						<label class="">Fecha vencimiento:</label>
 						<div class="row">
 							<div class="col-lg-3">
-								<input type="text" name="mes_vencimiento" id="mes_vencimiento" value="" class="input ccv" placeholder="MES">
+								<input type="text" name="mes_vencimiento" id="mes_vencimiento" value="" class="input ccv" placeholder="MES" maxlength="2">
 							</div>
 							<div class="col-lg-3">
-								<input type="text" name="anio_vencimiento" id="anio_vencimiento" value="" class="input ccv" placeholder="AÑO">
+								<input type="text" name="anio_vencimiento" id="anio_vencimiento" value="" class="input ccv" placeholder="AÑO" maxlength="2">
 							</div>
 						</div>
 					</div>
